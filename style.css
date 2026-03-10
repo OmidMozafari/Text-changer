@@ -3,9 +3,10 @@ body{
     flex-direction: column;
     padding: 20px;
     align-items: center;
+    background-color: antiquewhite;
 }
 
-#textarea{
+#textArea{
     font-size: 24px;
     font-weight: 200;
     background-color: rgb(212, 135, 104);
@@ -15,7 +16,7 @@ body{
     margin-bottom: 20px;
     padding: 10px;
 }
-textarea::placeholder{
+textArea::placeholder{
     color: white;
 }
 
