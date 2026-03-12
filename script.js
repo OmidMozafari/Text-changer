@@ -6,6 +6,10 @@ const deleteSpaces = document.getElementById("deleteSpaces");
 const wordCounter = document.getElementById("wordCounter");
 const charcterCounter = document.getElementById("charcterCounter");
 const reverseWords = document.getElementById("reverseWords");
+const firstCounterParagraph = document.getElementById("firstCounterPara")
+const secondCounterParagraph = document.getElementById("secondCounterPara")
+
+
 
 
 // To upper case funciton
@@ -64,14 +68,41 @@ function countWords (){
             count++
         }
     }
-    console.log(count);
+    firstCounterParagraph.innerHTML = count
     
     return 
 }
 
-UpperCasing.addEventListener("click", upperCase)
-LowerCasing.addEventListener("click", lowerCase)
-Capitalizing.addEventListener("click", capitalize)
-deleteSpaces.addEventListener("click", deleteAdditionalSpaces)
-wordCounter.addEventListener("click", countWords)
+//charcter counter function
+function countCharcters(){
+    let charCount = 0;
+    deleteAdditionalSpaces();
+    let thirdTextAreaArray = textArea.value.split("")
+    for(c of thirdTextAreaArray){
+        charCount+=1
+    }
+    secondCounterParagraph.innerHTML = charCount
+    return
+}
 
+// reverse words function
+function reverse(){
+    let reverseArray = [];
+    deleteAdditionalSpaces();
+    let fourthTextAreaArray = textArea.value.split(" ")
+    for (r of fourthTextAreaArray){
+        reverseArray.push(r)
+    }
+    reverseArray.reverse()
+    textArea.value = reverseArray.join(" ")
+    return
+
+}
+//event sections
+UpperCasing.addEventListener("click", upperCase);
+LowerCasing.addEventListener("click", lowerCase);
+Capitalizing.addEventListener("click", capitalize);
+deleteSpaces.addEventListener("click", deleteAdditionalSpaces);
+wordCounter.addEventListener("click", countWords);
+charcterCounter.addEventListener("click", countCharcters);
+reverseWords.addEventListener("click", reverse)
